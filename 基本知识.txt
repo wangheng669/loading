@@ -1,0 +1,5 @@
+document.onreadystatechange - 四个状态 只用到加载完成状态
+
+document.readyState - complete[加载完成]
+
+fadeOut() - 淡出

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+	<title>图片预加载无序</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('a').on('click',function(event){
+			$('.qq-face').fadeToggle();
+			event.stopPropagation();
+		})
+		$(document).on('click',function(){
+			$('.qq-face').fadeOut();
+
+		})
+	})
+		document.onreadystatechange=function(){
+			if(document.readyState="complete"){
+				$('.loading').fadeOut();
+				$('.qq-face').fadeIn();
+		}}
+	</script>
+	<style type="text/css">
+		body{
+			margin: 0;padding:0;
+		}
+		.main{
+			height: 200px;
+			width: 600px;
+			margin: 200px auto;
+		}
+		.qq-face{
+			width: 360px;
+			display: none;
+			border: 1px solid #ccc;
+		}
+		a{
+			text-decoration: none;
+		}
+		.loading{
+			position: fixed;
+			line-height: 50px;
+			text-align: center;
+			width: 360px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+<textarea cols="83" rows="10">
+</textarea>
+<a href="#">表情</a>
+<div class="loading">图片加载中....</div>
+<div class="qq-face">
+<img src="img/qq/1.gif" alt="">
+<img src="img/qq/2.gif" alt="">
+<img src="img/qq/3.gif" alt="">
+<img src="img/qq/4.gif" alt="">
+<img src="img/qq/5.gif" alt="">
+<img src="img/qq/6.gif" alt="">
+<img src="img/qq/7.gif" alt="">
+<img src="img/qq/8.gif" alt="">
+<img src="img/qq/9.gif" alt="">
+<img src="img/qq/10.gif" alt="">
+<img src="img/qq/11.gif" alt="">
+<img src="img/qq/12.gif" alt="">
+<img src="img/qq/13.gif" alt="">
+<img src="img/qq/14.gif" alt="">
+<img src="img/qq/15.gif" alt="">
+<img src="img/qq/16.gif" alt="">
+<img src="img/qq/17.gif" alt="">
+<img src="img/qq/18.gif" alt="">
+<img src="img/qq/19.gif" alt="">
+<img src="img/qq/20.gif" alt="">
+<img src="img/qq/21.gif" alt="">
+<img src="img/qq/22.gif" alt="">
+<img src="img/qq/23.gif" alt="">
+<img src="img/qq/24.gif" alt="">
+<img src="img/qq/25.gif" alt="">
+<img src="img/qq/26.gif" alt="">
+<img src="img/qq/27.gif" alt="">
+<img src="img/qq/28.gif" alt="">
+<img src="img/qq/29.gif" alt="">
+<img src="img/qq/30.gif" alt="">
+<img src="img/qq/31.gif" alt="">
+<img src="img/qq/32.gif" alt="">
+<img src="img/qq/33.gif" alt="">
+<img src="img/qq/34.gif" alt="">
+<img src="img/qq/35.gif" alt="">
+<img src="img/qq/36.gif" alt="">
+<img src="img/qq/37.gif" alt="">
+<img src="img/qq/38.gif" alt="">
+<img src="img/qq/39.gif" alt="">
+<img src="img/qq/40.gif" alt="">
+<img src="img/qq/41.gif" alt="">
+<img src="img/qq/42.gif" alt="">
+<img src="img/qq/43.gif" alt="">
+<img src="img/qq/44.gif" alt="">
+<img src="img/qq/45.gif" alt="">
+<img src="img/qq/46.gif" alt="">
+<img src="img/qq/47.gif" alt="">
+<img src="img/qq/48.gif" alt="">
+<img src="img/qq/49.gif" alt="">
+<img src="img/qq/50.gif" alt="">
+<img src="img/qq/51.gif" alt="">
+<img src="img/qq/52.gif" alt="">
+<img src="img/qq/53.gif" alt="">
+<img src="img/qq/54.gif" alt="">
+<img src="img/qq/55.gif" alt="">
+<img src="img/qq/56.gif" alt="">
+<img src="img/qq/57.gif" alt="">
+<img src="img/qq/58.gif" alt="">
+<img src="img/qq/59.gif" alt="">
+<img src="img/qq/60.gif" alt="">
+<img src="img/qq/61.gif" alt="">
+<img src="img/qq/62.gif" alt="">
+<img src="img/qq/63.gif" alt="">
+<img src="img/qq/64.gif" alt="">
+<img src="img/qq/65.gif" alt="">
+<img src="img/qq/66.gif" alt="">
+<img src="img/qq/67.gif" alt="">
+<img src="img/qq/68.gif" alt="">
+<img src="img/qq/69.gif" alt="">
+<img src="img/qq/70.gif" alt="">
+<img src="img/qq/71.gif" alt="">
+<img src="img/qq/72.gif" alt="">
+<img src="img/qq/73.gif" alt="">
+<img src="img/qq/74.gif" alt="">
+<img src="img/qq/75.gif" alt="">
+</div>
+</div>
+</body>
+</html>

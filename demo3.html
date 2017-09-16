@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>图片预加载之有序加载</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var imgs=['http://i2.hoopchina.com.cn/user/308/15960308/13383588090.jpg',
+		'http://img.article.pchome.net/00/44/23/20/pic_lib/wm/2.jpg',
+		'http://lcd.yesky.com/imagelist/2009/044/404q4y8g4m0p.jpg',
+		'http://lcd.yesky.com/imagelist/2009/044/cgro54wt2t2x.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620160&di=951961b96c1ab3c9efec0a4033e34af4&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D8a953b1817950a7b6138468762b808ac%2F03087bf40ad162d9344e02321bdfa9ec8a13cd78.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620159&di=8fa3f89980751b504a9db38c0f6feecd&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fd50735fae6cd7b89051430a0052442a7d9330e9c.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620159&di=8b05cf6f12d8315a5c646bfc0a444bcf&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0b55b319ebc4b745d1a5e304c5fc1e178a8215ea.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620159&di=fc660290efa0ebe1e7dd3879aefafe94&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D5602ad1fab8b87d6444fa35c6f61424d%2F267f9e2f07082838fa2ec33ab299a9014c08f1f9.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620157&di=04518333d20c45f2a3a2506b92f277c4&imgtype=0&src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1011%2F112G6002358%2F16112F02358-1.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505474620157&di=e96afaf441b291132f565e897e97cafc&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D1482fd451a38534398c28f62fb7ada0b%2Ffaf2b2119313b07eeb285e2106d7912397dd8c05.jpg'
+	];
+			var index=0;
+			var len=imgs.length;
+			$('.btn').on('click',function(){
+				if($(this).data("control")=="prev"){
+					index=Math.max(0,--index);
+				}else{
+					index=Math.min(len-1,++index);
+				}
+				$('#img').attr('src',imgs[index]);
+			})
+			var count=0;
+		function load(){
+				var imgObj =new Image();
+				$(imgObj).on('load error',function(){
+					if(count>=len){
+					}else{
+						count++;
+						load();
+					}
+				})
+				imgObj.src=imgs[count];
+		}
+		load();	
+		})
+	</script>
+	<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+		.image{
+			text-align: center;
+			width:1200px;
+			margin: 0 auto;
+		}
+		.image a{
+			display: inline-block;
+			border: 1px solid #ccc;
+			padding:5px;
+			margin:20px;
+		}
+	</style>
+</head>
+<body>
+<div class="image">
+	<img id="img" src="http://i2.hoopchina.com.cn/user/308/15960308/13383588090.jpg" width="1200">
+	<a class="btn" herf="javascript:;" data-control="prev">上一张</a>
+	<a class="btn" herf="javascript:;" data-control="next">下一张</a>
+</div>
+<script>
+</script>
+</body>
+</html>
